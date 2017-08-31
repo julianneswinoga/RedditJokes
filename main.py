@@ -41,7 +41,7 @@ r = praw.Reddit('jokes', user_agent="/r/Jokes repost check")
 print 'Made Reddit instance'
 
 subreddit = r.subreddit('jokes')
-submissions = list(subreddit.top(time_filter='week', limit=100))
+submissions = list(subreddit.new(limit=25))
 print 'Retrieved submissions: %s' % len(submissions)
 
 updateJokesList(submissions)
